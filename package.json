@@ -1,5 +1,5 @@
 {
-  "name": "vite-ts-vue3",
+  "name": "vue3-vite-ts-router-pinia-element-plus",
   "version": "0.0.1",
   "scripts": {
     "dev": "vite --host --mode development",
