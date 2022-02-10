@@ -12,10 +12,14 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "~/*": ["./public/*"]
     },
-    "types": ["element-plus/global", "node"]
+    "types": ["element-plus/global", "./src/auto-imports", "./src/components", "node", "vite/client"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "env.d.ts", "index.d.ts"],
-  "exclude": []
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "env.d.ts"],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }

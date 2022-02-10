@@ -5,7 +5,8 @@ module.exports = {
   },
   extends: [
     'plugin:vue/essential',
-    'standard'
+    'standard',
+    'vue-global-api'
   ],
   parserOptions: {
     ecmaVersion: 12,

@@ -7,9 +7,12 @@ export const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "Home" */ '@/views/Home/index.vue')
   },
   {
-    path: '/Hello',
-    name: 'Hello',
-    component: () => import(/* webpackChunkName: "Hello" */ '@/components/HelloWorld.vue')
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "Login" */ '@/views/Login/index.vue')
   },
-  { path: '/', redirect: { name: 'Home' } }
+  {
+    path: '/',
+    redirect: '/home'
+  }
 ]

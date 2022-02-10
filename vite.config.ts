@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import legacy from '@vitejs/plugin-legacy'
 import { resolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 const { geoserverHost } = require('./public/setting')
 
 // https://vitejs.dev/config/
@@ -13,13 +15,23 @@ export default defineConfig(({ mode }) => {
   return {
     base: './', // 打包路径
     plugins: [
+      vue(),
       AutoImport({
+        imports: ['vue'],
+        dts: 'src/auto-imports.d.ts',
         resolvers: [ElementPlusResolver()]
       }),
       Components({
+        dts: 'src/components.d.ts',
         resolvers: [ElementPlusResolver()]
       }),
-      vue()
+      VueSetupExtend(),
+      // babel for browsers
+      legacy({
+        // The query is also Browserslist compatible.
+        // The default value, 'defaults', is what is recommended by Browserslist.
+        // targets: ['defaults', 'not IE 11']
+      })
     ],
     sourcemap: isDev,
     resolve: {
