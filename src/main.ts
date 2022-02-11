@@ -7,6 +7,7 @@ import router from '@/router'
 // bug: 按需引入element-plus ElMessage无样式，需要引入对应组件样式，可能后面unplugin-vue-components插件会更新修复这个bug
 import 'element-plus/theme-chalk/el-message.css'
 import '@/styles/index.scss'
+import '@/styles/index.css'
 // icon组件还需单独再引入
 // import { UserFilled, Lock, Right } from "@element-plus/icons-vue";
 // 如：<el-icon><right /></el-icon>

@@ -15,9 +15,9 @@
       "@/*": ["./src/*"],
       "~/*": ["./public/*"]
     },
-    "types": ["element-plus/global", "./src/auto-imports", "./src/components", "node", "vite/client"]
+    "types": ["element-plus/global", "./auto-imports", "./components", "node", "vite/client"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "env.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "env.d.ts", "*.ts"],
   "exclude": [
     "node_modules",
     "**/*.spec.ts"
