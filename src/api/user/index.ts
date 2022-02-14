@@ -2,5 +2,5 @@ import http from '@/api'
 
 // demo
 export const getUser = () => {
-  return http.get('/dasd')
+  return http.get('http://www.baidu.com')
 }
