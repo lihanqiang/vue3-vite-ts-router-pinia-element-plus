@@ -1,25 +1,25 @@
 <template>
   <div>
-    <!-- <p>后期考虑使用tailwind.css</p> -->
-    <el-button @click="countStore.increment">{{ refCount.count }}</el-button>
-    <el-button @click="plus">{{ num }}</el-button>
+    <p class="m-10">使用tailwind.css</p>
+    <button class="m-2" type="button" @click="userStore.increment">{{ refCount.count }}</button>
+    <button class="m-2" type="button" @click="plus">{{ num }}</button>
     <p>
       <el-button @click="goLogin">go to login</el-button>
     </p>
-    <div class="bg-white rounded shadow border p-6 w-64">
-      <h5 class="text-3xl font-bold mb-4 mt-0">My Title</h5>
+    <div class="bg-white rounded shadow border m-10 p-6 w-64 mx-auto">
+      <h5 class="text-3xl font-bold mb-4 mt-0 center">My Title</h5>
       <p class="text-gray-700 text-sm">Content goes here</p>
     </div>
-    <button class="btn">dsad</button>
+    <button class="btn">hover me</button>
   </div>
 </template>
 
 <script setup lang="ts" name="Home">
 import { storeToRefs } from 'pinia'
-import userStore from '@/store/user'
+import useUserStore from '@/store/user'
 import router from '@/router'
-const countStore = userStore()
-const refCount = storeToRefs(countStore)
+const userStore = useUserStore()
+const refCount = storeToRefs(userStore)
 const goLogin = () => {
   router.push('/login')
 }
